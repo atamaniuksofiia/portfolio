@@ -1,103 +1,115 @@
-import Image from "next/image";
+"use client";
+import { useState } from "react";
 
-export default function Home() {
+export default function AboutPage() {
+  const [showSoftSkills, setShowSoftSkills] = useState(false);
+  const [showTechSkills, setShowTechSkills] = useState(false);
+  const [showEducation, setShowEducation] = useState(false);
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <section className="space-y-6">
+      <h1 className="text-4xl font-bold">About Me</h1>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      <p className="text-lg">
+        I&apos;m a motivated Front-End Developer with hands-on experience
+        building user-friendly applications using React, TypeScript, JavaScript,
+        and Tailwind CSS. I enjoy working on team projects and constantly strive
+        to improve code quality and UX.
+      </p>
+
+      <p>
+        Currently, I’m working at <strong>Edvantis</strong> as a React
+        Developer, where I set up scalable Storybook environments, implemented
+        reusable components for a monorepo architecture, and collaborated on
+        multi-portal design systems.
+      </p>
+
+      <p>
+        My background in <strong>L&D and mentorship</strong> allows me to
+        understand collaboration, documentation, and team efficiency from a
+        broader perspective. While working at SoftServe, I led programs
+        impacting over 10,000 employees, expanding mentorship and shadowing
+        initiatives across multiple regions.
+      </p>
+
+      <p>
+        I’m also passionate about modern technologies — currently diving deeper
+        into Next.js, React Native, and building full-featured UI libraries with
+        Storybook.
+      </p>
+
+      <p>
+        In short: I love writing clean, accessible, and maintainable front-end
+        code — and I’m always learning something new.
+      </p>
+      {/* Education Dropdown */}
+      <div className="border rounded-md p-4">
+        <button
+          onClick={() => setShowEducation(!showEducation)}
+          className="w-full text-left font-semibold text-xl flex justify-between items-center"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          Education
+          <span>{showEducation ? "▲" : "▼"}</span>
+        </button>
+        {showEducation && (
+          <ul className="mt-4 list-disc list-inside space-y-2">
+            <li>
+              <strong>GoIT</strong> — FullStack Developer Program (2024 - 2025)
+            </li>
+            <li>
+              <strong>Lviv Business School of UCU</strong> — HRM in Business
+              (2021)
+            </li>
+            <li>
+              <strong>Ukrainian Catholic University</strong> — Bachelor of
+              General and Social Pedagogy (2017 - 2021)
+            </li>
+          </ul>
+        )}
+      </div>
+      {/* Soft Skills Dropdown */}
+      <div className="border rounded-md p-4">
+        <button
+          onClick={() => setShowSoftSkills(!showSoftSkills)}
+          className="w-full text-left font-semibold text-xl flex justify-between items-center"
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          Soft Skills
+          <span>{showSoftSkills ? "▲" : "▼"}</span>
+        </button>
+        {showSoftSkills && (
+          <ul className="mt-4 list-disc list-inside space-y-2">
+            <li>Excellent communication</li>
+            <li>Critical thinking</li>
+            <li>Teamwork</li>
+            <li>Adaptability</li>
+            <li>Emotional intelligence</li>
+            <li>Willingness to learn</li>
+          </ul>
+        )}
+      </div>
+
+      {/* Tech Stack Dropdown */}
+      <div className="border rounded-md p-4">
+        <button
+          onClick={() => setShowTechSkills(!showTechSkills)}
+          className="w-full text-left font-semibold text-xl flex justify-between items-center"
         >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          Tech Stack
+          <span>{showTechSkills ? "▲" : "▼"}</span>
+        </button>
+        {showTechSkills && (
+          <ul className="mt-4 list-disc list-inside space-y-2">
+            <li>React</li>
+            <li>TypeScript</li>
+            <li>JavaScript</li>
+            <li>Tailwind CSS</li>
+            <li>Storybook</li>
+            <li>Material UI</li>
+            <li>Redux</li>
+            <li>RESTful API</li>
+            <li>GIT</li>
+          </ul>
+        )}
+      </div>
+    </section>
   );
 }
