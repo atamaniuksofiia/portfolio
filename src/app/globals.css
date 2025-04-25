@@ -9,6 +9,9 @@
   --primary-foreground: #ffffff;
   --secondary: #eaeaea;
   --secondary-foreground: #171717;
+  --accent: #f5f5f5;
+  --accent-foreground: #171717;
+  --border: #e5e5e5;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,6 +22,9 @@
     --primary-foreground: #ffffff;
     --secondary: #3a3a3a;
     --secondary-foreground: #ffffff;
+    --accent: #2d2d2d;
+    --accent-foreground: #ffffff;
+    --border: #333333;
   }
 }
 
@@ -30,4 +36,22 @@ body {
 
 html {
   transition: background-color 0.3s, color 0.3s;
+}
+
+@layer components {
+  .portfolio-card {
+    @apply bg-background border border-border rounded-lg p-4 shadow-sm transition-all;
+  }
+
+  .card-hover {
+    @apply hover:shadow-md hover:border-primary opacity-80;
+  }
+
+  .section-heading {
+    @apply text-4xl font-bold mb-8;
+  }
+
+  .animated-underline {
+    @apply relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-primary after:w-0 hover:after:w-full after:transition-all after:duration-300;
+  }
 }

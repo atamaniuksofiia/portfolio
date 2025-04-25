@@ -27,40 +27,56 @@ export function ThemeProvider({
   defaultTheme = "system",
   storageKey = "portfolio-theme",
 }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>("system");
+  const [theme, setTheme] = useState<Theme>(defaultTheme);
 
+  // Load saved theme on initial render
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const savedTheme = localStorage.getItem(storageKey) as Theme;
-      setTheme(savedTheme || defaultTheme);
-    }
-  }, [defaultTheme, storageKey]);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const root = document.documentElement;
-      root.classList.remove("light", "dark");
-
-      if (theme === "system") {
-        const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-          .matches
-          ? "dark"
-          : "light";
-        root.classList.add(systemTheme);
-        return;
+    try {
+      const savedTheme = localStorage.getItem(storageKey);
+      if (
+        savedTheme === "light" ||
+        savedTheme === "dark" ||
+        savedTheme === "system"
+      ) {
+        setTheme(savedTheme);
       }
+    } catch (e) {
+      console.error("Error accessing localStorage:", e);
+    }
+  }, [storageKey]);
 
+  // Apply the theme class to the document element
+  useEffect(() => {
+    const root = document.documentElement;
+    const prevTheme = root.classList.contains("dark") ? "dark" : "light";
+
+    if (theme === "system") {
+      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
+        .matches
+        ? "dark"
+        : "light";
+
+      root.classList.remove(prevTheme);
+      root.classList.add(systemTheme);
+    } else {
+      root.classList.remove(prevTheme);
       root.classList.add(theme);
-      localStorage.setItem(storageKey, theme); // Зберігаємо вибір теми
+    }
+
+    // Save to localStorage
+    if (typeof window !== "undefined") {
+      try {
+        localStorage.setItem(storageKey, theme);
+      } catch (e) {
+        console.error("Error saving to localStorage:", e);
+      }
     }
   }, [theme, storageKey]);
 
+  // Create context value
   const value = {
     theme,
-    setTheme: (theme: Theme) => {
-      localStorage.setItem(storageKey, theme);
-      setTheme(theme);
-    },
+    setTheme,
   };
 
   return (
@@ -70,10 +86,9 @@ export function ThemeProvider({
   );
 }
 
-// Exporting `useTheme` hook to be used in other components
 export const useTheme = () => {
   const context = useContext(ThemeProviderContext);
-  if (!context) {
+  if (context === undefined) {
     throw new Error("useTheme must be used within a ThemeProvider");
   }
   return context;
