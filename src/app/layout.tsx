@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import "./globals.css";
-import Navbar from "./components/Navbar";
+import Navbar from "@/app/components/Navbar";
+import { ThemeProvider } from "./components/ThemeProvider";
 
 export const metadata = {
   title: "Sofiia Atamaniuk Portfolio",
@@ -10,8 +11,10 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="bg-background text-foreground min-h-screen transition-colors duration-300">
-        <Navbar />
+      <body>
+        <ThemeProvider>
+          <Navbar />
+        </ThemeProvider>
         <main className="px-4 py-6 max-w-5xl mx-auto">{children}</main>
       </body>
     </html>
