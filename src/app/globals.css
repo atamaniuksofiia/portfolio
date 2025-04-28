@@ -14,18 +14,16 @@
   --border: #e5e5e5;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #171717;
-    --foreground: #ffffff;
-    --primary: #3b82f6;
-    --primary-foreground: #ffffff;
-    --secondary: #3a3a3a;
-    --secondary-foreground: #ffffff;
-    --accent: #2d2d2d;
-    --accent-foreground: #ffffff;
-    --border: #333333;
-  }
+.dark {
+  --background: #171717;
+  --foreground: #ffffff;
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+  --secondary: #3a3a3a;
+  --secondary-foreground: #ffffff;
+  --accent: #2d2d2d;
+  --accent-foreground: #ffffff;
+  --border: #333333;
 }
 
 body {
@@ -44,7 +42,7 @@ html {
   }
 
   .card-hover {
-    @apply hover:shadow-md hover:border-primary opacity-80;
+    @apply hover:shadow-md hover:border-primary hover:opacity-100 opacity-90;
   }
 
   .section-heading {

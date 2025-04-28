@@ -4,17 +4,11 @@ import { useTheme } from "./ThemeProvider";
 import { Moon, Sun } from "lucide-react";
 
 export function ThemeSwitcher() {
-  const { theme, setTheme } = useTheme(); // Використовуємо useTheme для доступу до теми
+  const { theme, setTheme } = useTheme();
 
-  // Функція для перемикання між темами
+  // Toggle between light and dark themes
   const toggleTheme = () => {
-    if (theme === "dark") {
-      setTheme("light"); // Якщо зараз темна тема, перемикаємо на світлу
-    } else if (theme === "light") {
-      setTheme("dark"); // Якщо зараз світла тема, перемикаємо на темну
-    } else {
-      setTheme("system"); // Якщо "system", перемикаємо на системну тему (автоматичну)
-    }
+    setTheme(theme === "dark" ? "light" : "dark");
   };
 
   return (
@@ -24,9 +18,9 @@ export function ThemeSwitcher() {
       aria-label="Toggle theme"
     >
       {theme === "dark" ? (
-        <Sun className="h-5 w-5" /> // Іконка для темної теми
+        <Sun className="h-5 w-5" />
       ) : (
-        <Moon className="h-5 w-5" /> // Іконка для світлої теми
+        <Moon className="h-5 w-5" />
       )}
     </button>
   );

@@ -8,15 +8,14 @@ import { usePathname } from "next/navigation"; // Використовуємо u
 
 const navItems = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
+  { label: "About Me", href: "/about" },
   { label: "Experience", href: "/experience" },
   { label: "Projects", href: "/projects" },
-  { label: "Blog", href: "/blog" },
 ];
 
 export default function Navbar() {
   const pathname = usePathname(); // Використовуємо usePathname з Next.js
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Handle scroll effect
@@ -34,13 +33,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-background/80 backdrop-blur-md shadow-sm py-3"
-          : "bg-transparent py-5"
-      }`}
-    >
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm py-4">
       <div className="max-w-5xl mx-auto flex justify-between items-center px-4">
         <Link
           href="/"
@@ -86,7 +79,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border py-4 animate-fade-in">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-border py-4 animate-fade-in">
           <ul className="flex flex-col items-center gap-4">
             {navItems.map(({ label, href }) => (
               <li key={href} className="w-full">
