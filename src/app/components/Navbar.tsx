@@ -33,7 +33,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm py-4">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-neutral-900 shadow-sm py-4 transition-colors duration-300">
       <div className="max-w-5xl mx-auto flex justify-between items-center px-4">
         <Link
           href="/"
@@ -79,7 +79,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-border py-4 animate-fade-in">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-white dark:bg-neutral-900 border-b border-border py-4 animate-fade-in transition-colors duration-300">
           <ul className="flex flex-col items-center gap-4">
             {navItems.map(({ label, href }) => (
               <li key={href} className="w-full">
