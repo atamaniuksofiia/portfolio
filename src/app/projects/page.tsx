@@ -32,10 +32,10 @@ export default function ProjectsPage() {
                 <li className="flex items-start gap-2">
                   <span className="text-primary font-bold">•</span>
                   <span>
-                    Real-Time Financial Data Integration: Built a comprehensive
-                    stock market dashboard displaying real-time company
-                    information, stock prices, and financial metrics for major
-                    tech companies (AAPL, NVDA, MSFT).
+                    Financial Data Integration: Built a comprehensive stock
+                    market dashboard displaying company information, stock
+                    prices, and financial metrics for major tech companies
+                    (AAPL, NVDA, MSFT).
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
@@ -130,8 +130,7 @@ export default function ProjectsPage() {
                   <span className="text-primary font-bold">•</span>
                   <span>
                     Form Validation & Security: Built robust client-side form
-                    validation for payment details including card number, expiry
-                    date, and CVV with real-time error feedback.
+                    validation for payment detail.
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
