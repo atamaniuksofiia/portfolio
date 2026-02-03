@@ -22,14 +22,16 @@ export default function HomePage() {
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
             Full-stack developer specializing in <strong>TypeScript</strong>,{" "}
             <strong>React</strong>, <strong>Next.js</strong>, and{" "}
-            <strong>NestJS</strong>. Skilled in <strong>PostgreSQL</strong>,{" "}
-            <strong>TypeORM</strong>, state management, and cloud deployments.
+            <strong>NestJS</strong>. Experienced in building production-ready
+            applications with <strong>PostgreSQL</strong>, state management, and
+            cloud deployments.
           </p>
 
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
             I leverage <strong>AI-driven development</strong> to accelerate
             feature delivery. Strong background in{" "}
-            <strong>API development</strong> and third-party integrations.
+            <strong>API development</strong>, database design, and third-party
+            integrations (<strong>Stripe</strong>, <strong>SendGrid</strong>).
           </p>
 
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
