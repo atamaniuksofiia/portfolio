@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export default function AboutPage() {
   const [openSoftSkills, setOpenSoftSkills] = useState(false);
-  const [openTechSkills, setOpenTechSkills] = useState(false);
+  const [openTechSkills, setOpenTechSkills] = useState(true);
 
   return (
     <section className="space-y-8">
@@ -60,10 +60,10 @@ export default function AboutPage() {
         </CardContent>
       </Card>
 
-      {/* Skills Section */}
-      <div className="flex flex-col md:flex-row gap-6">
+      {/* Skills Section - FIXED: Changed from flex-row to grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
         {/* Tech Skills Dropdown Card */}
-        <Card className="flex-1">
+        <Card className="w-full">
           <CardTitle>
             <button
               onClick={() => setOpenTechSkills(!openTechSkills)}
@@ -116,7 +116,7 @@ export default function AboutPage() {
         </Card>
 
         {/* Soft Skills Dropdown Card */}
-        <Card className="flex-1">
+        <Card className="w-full">
           <CardTitle>
             <button
               onClick={() => setOpenSoftSkills(!openSoftSkills)}
