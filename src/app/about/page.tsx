@@ -29,7 +29,7 @@ export default function AboutPage() {
             <br />
             Fluent in <strong>English (B2+)</strong>, I thrive in collaborative
             environments and am passionate about creating efficient, scalable
-            solutions. Let's connect!
+            solutions. Let`&apos;`s connect!
           </p>
         </CardContent>
       </Card>
@@ -157,7 +157,8 @@ export default function AboutPage() {
             </li>
             <li>Formation of leadership skills - 2021, UCU</li>
             <li>
-              Time Management. How to organize your team's time - 2021, LBS UCU
+              Time Management. How to organize your team`&apos;`s time - 2021,
+              LBS UCU
             </li>
             <li>Emotional intelligence - 2021, UCU</li>
           </ul>
