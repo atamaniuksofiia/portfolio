@@ -5,9 +5,9 @@ import {
   CardTitle,
   CardContent,
   CardFooter,
-} from "@/app/components/Card"; // Імпортуємо Card
-import { Button } from "@/app/components/Button"; // Імпортуємо Button
-import { useState } from "react"; // Імпортуємо useState для відкриття/закриття
+} from "@/app/components/Card";
+import { Button } from "@/app/components/Button";
+import { useState } from "react";
 
 export default function AboutPage() {
   const [openSoftSkills, setOpenSoftSkills] = useState(false);
