@@ -15,9 +15,11 @@ export default function ProjectsPage() {
   return (
     <section className="space-y-8">
       <h1 className="section-heading">Projects</h1>
+
+      {/* Stock Dashboard */}
       <Card>
-        <CardTitle>To-Do App</CardTitle>
-        <CardDescription>React, TypeScript, Tailwind CSS</CardDescription>
+        <CardTitle>Stock Market Dashboard</CardTitle>
+        <CardDescription>React, TypeScript, Financial Data API</CardDescription>
 
         <CardContent>
           <div className="flex justify-between items-start gap-4">
@@ -30,34 +32,37 @@ export default function ProjectsPage() {
                 <li className="flex items-start gap-2">
                   <span className="text-primary font-bold">•</span>
                   <span>
-                    Feature-Rich Task Management: Developed core functionality
-                    for task creation, deletion, and status toggling using React
-                    and TypeScript, ensuring smooth and responsive user
-                    interactions.
+                    Real-Time Financial Data Integration: Built a comprehensive
+                    stock market dashboard displaying real-time company
+                    information, stock prices, and financial metrics for major
+                    tech companies (AAPL, NVDA, MSFT).
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-primary font-bold">•</span>
                   <span>
-                    Responsive UI with Tailwind CSS: Implemented a clean,
-                    adaptive interface optimized for desktop and mobile users
-                    using utility-first styling with Tailwind.
+                    Dynamic Multi-Window Interface: Implemented a mosaic-style
+                    layout with draggable, resizable panels allowing users to
+                    monitor multiple stocks simultaneously with auto-arrange
+                    functionality.
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-primary font-bold">•</span>
                   <span>
-                    Reusable Component Architecture: Structured the project with
-                    modular, reusable components, enabling scalability and
-                    maintainability.
+                    Comprehensive Company Profiles: Developed detailed company
+                    information cards displaying ticker symbols, legal names,
+                    stock exchanges, business descriptions, contact details, and
+                    filing information.
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-primary font-bold">•</span>
                   <span>
-                    State Management with React Hooks: Applied useState and
-                    other React hooks for effective local state management and
-                    interactive UI behavior.
+                    Theme Customization: Integrated light/dark theme toggle with
+                    Blueprint UI framework for enhanced user experience and
+                    reduced eye strain during extended market monitoring
+                    sessions.
                   </span>
                 </li>
               </ul>
@@ -66,8 +71,8 @@ export default function ProjectsPage() {
             {/* Right: Project Image */}
             <div className="w-40 h-40 rounded-full overflow-hidden border border-gray-300 shrink-0">
               <Image
-                src="/images/todo-app.png"
-                alt="To-Do App Preview"
+                src="/images/documents.png"
+                alt="Stock Dashboard Preview"
                 width={200}
                 height={200}
                 quality={100}
@@ -80,7 +85,7 @@ export default function ProjectsPage() {
 
         <CardFooter>
           <Button
-            href="https://todo-app-s15q.vercel.app"
+            href="https://atamaniuksofiia.github.io/dashboards/"
             external
             variant="primary"
             size="sm"
@@ -89,7 +94,7 @@ export default function ProjectsPage() {
             Live Demo
           </Button>
           <Button
-            href="https://github.com/atamaniuksofiia/todo-app"
+            href="https://github.com/atamaniuksofiia/dashboards"
             external
             variant="outline"
             size="sm"
@@ -100,6 +105,92 @@ export default function ProjectsPage() {
         </CardFooter>
       </Card>
 
+      {/* Minimal Payment Page */}
+      <Card>
+        <CardTitle>Minimal Payment Page</CardTitle>
+        <CardDescription>React, TypeScript, Responsive Design</CardDescription>
+
+        <CardContent>
+          <div className="flex justify-between items-start gap-4">
+            {/* Left: Text content */}
+            <div className="flex-1">
+              <p className="text-sm font-medium mb-2">
+                Role: Front-End React Developer
+              </p>
+              <ul className="text-sm space-y-2">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary font-bold">•</span>
+                  <span>
+                    Clean Payment Interface: Designed and implemented a
+                    minimalist, user-friendly payment page with focus on
+                    simplicity and conversion optimization.
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary font-bold">•</span>
+                  <span>
+                    Form Validation & Security: Built robust client-side form
+                    validation for payment details including card number, expiry
+                    date, and CVV with real-time error feedback.
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary font-bold">•</span>
+                  <span>
+                    Responsive Design: Created a fully responsive layout
+                    ensuring seamless payment experience across desktop, tablet,
+                    and mobile devices.
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary font-bold">•</span>
+                  <span>
+                    Modern UI/UX: Applied modern design principles with smooth
+                    animations, clear visual hierarchy, and intuitive user flow
+                    to reduce cart abandonment.
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Right: Image circle */}
+            <div className="w-40 h-40 rounded-full overflow-hidden border border-gray-300 shrink-0">
+              <Image
+                src="/images/payment.png"
+                alt="Payment Page Preview"
+                width={200}
+                height={200}
+                quality={100}
+                priority
+                className="object-cover w-full h-full scale-105"
+              />
+            </div>
+          </div>
+        </CardContent>
+
+        <CardFooter>
+          <Button
+            href="https://atamaniuksofiia.github.io/minimal-payment-page/"
+            external
+            variant="primary"
+            size="sm"
+          >
+            <ExternalLink className="mr-2 h-4 w-4" />
+            Live Demo
+          </Button>
+          <Button
+            href="https://github.com/atamaniuksofiia/minimal-payment-page"
+            external
+            variant="outline"
+            size="sm"
+          >
+            <Github className="mr-2 h-4 w-4" />
+            GitHub Repo
+          </Button>
+        </CardFooter>
+      </Card>
+
+      {/* Picture Generation App */}
       <Card>
         <CardTitle>Picture Generation App</CardTitle>
         <CardDescription>JavaScript, RESTful API, HTML, CSS</CardDescription>
