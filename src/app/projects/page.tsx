@@ -170,7 +170,7 @@ export default function ProjectsPage() {
 
         <CardFooter>
           <Button
-            href="https://atamaniuksofiia.github.io/minimal-payment-page/"
+            href="https://minimal-payment-page.vercel.app/"
             external
             variant="primary"
             size="sm"

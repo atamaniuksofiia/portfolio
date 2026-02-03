@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  Card,
-  CardTitle,
-  CardContent,
-  CardFooter,
-} from "@/app/components/Card";
-import { Button } from "@/app/components/Button";
+import { Card, CardTitle, CardContent } from "@/app/components/Card";
 import { useState } from "react";
 
 export default function AboutPage() {
@@ -21,18 +15,21 @@ export default function AboutPage() {
       <Card>
         <CardContent>
           <p className="text-sm leading-6 text-foreground/80">
-            I am a motivated developer diving into web development with a strong
-            focus on React, TypeScript, JavaScript, HTML, and CSS. With hands-on
-            experience in team projects, I have honed my collaboration skills
-            and ability to create engaging, user-friendly web applications.
-            Currently, I am expanding my expertise by learning modern
-            technologies, including Node.js. <br />
+            I am a <strong>Full-Stack Developer</strong> specializing in
+            TypeScript, React, Next.js, and NestJS with proven experience
+            building production-ready applications. Skilled in PostgreSQL,
+            TypeORM, state management (Zustand, React Query), and cloud
+            deployments (AWS EC2, Docker).
             <br />
-            Dedicated to continuous improvement, I am eager to grow
-            professionally while contributing to innovative projects. Fluent in
-            English (B2+), I thrive in collaborative environments and am
-            passionate about leveraging technology to create impactful
-            solutions. Let’s connect!
+            <br />I leverage <strong>AI-driven development</strong> and
+            strategic prompting to accelerate feature delivery and optimize code
+            architecture. Strong background in API development, database design,
+            and third-party integrations (Forest Admin, SendGrid).
+            <br />
+            <br />
+            Fluent in <strong>English (B2+)</strong>, I thrive in collaborative
+            environments and am passionate about creating efficient, scalable
+            solutions. Let's connect!
           </p>
         </CardContent>
       </Card>
@@ -41,9 +38,15 @@ export default function AboutPage() {
       <Card>
         <CardTitle>Education</CardTitle>
         <CardContent>
-          <ul className="list-disc list-inside space-y-2">
+          <ul className="list-disc list-inside space-y-2 text-sm">
             <li>
-              <strong>GoIT</strong> — FullStack Developer Program (2024 - 2025)
+              <strong>GoIT</strong> — FullStack Developer (2024)
+              <ul className="ml-6 mt-1 list-disc list-inside text-foreground/70">
+                <li>HTML and CSS</li>
+                <li>JavaScript</li>
+                <li>React, Redux</li>
+                <li>Node.js</li>
+              </ul>
             </li>
             <li>
               <strong>Lviv Business School of UCU</strong> — HRM in Business
@@ -57,7 +60,61 @@ export default function AboutPage() {
         </CardContent>
       </Card>
 
+      {/* Skills Section */}
       <div className="flex flex-col md:flex-row gap-6">
+        {/* Tech Skills Dropdown Card */}
+        <Card className="flex-1">
+          <CardTitle>
+            <button
+              onClick={() => setOpenTechSkills(!openTechSkills)}
+              className="w-full text-left flex justify-between items-center text-lg font-semibold"
+            >
+              Technical Skills
+              <span>{openTechSkills ? "▲" : "▼"}</span>
+            </button>
+          </CardTitle>
+          {openTechSkills && (
+            <CardContent>
+              <div className="grid grid-cols-2 gap-4 text-sm">
+                <div>
+                  <h3 className="font-semibold mb-2 text-primary">Frontend</h3>
+                  <ul className="space-y-1 text-foreground/80">
+                    <li>• React</li>
+                    <li>• TypeScript</li>
+                    <li>• Next.js</li>
+                    <li>• Redux</li>
+                    <li>• JavaScript</li>
+                    <li>• HTML/CSS</li>
+                    <li>• Tailwind</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2 text-primary">
+                    Backend & Tools
+                  </h3>
+                  <ul className="space-y-1 text-foreground/80">
+                    <li>• Node.js</li>
+                    <li>• Nest.js</li>
+                    <li>• PostgreSQL</li>
+                    <li>• Docker</li>
+                    <li>• RESTful API</li>
+                    <li>• GIT</li>
+                    <li>• Storybook</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2 text-primary">Other</h3>
+                  <ul className="space-y-1 text-foreground/80">
+                    <li>• Stripe</li>
+                    <li>• Vercel</li>
+                    <li>• AI prompting (ChatGPT, Claude)</li>
+                  </ul>
+                </div>
+              </div>
+            </CardContent>
+          )}
+        </Card>
+
         {/* Soft Skills Dropdown Card */}
         <Card className="flex-1">
           <CardTitle>
@@ -66,59 +123,60 @@ export default function AboutPage() {
               className="w-full text-left flex justify-between items-center text-lg font-semibold"
             >
               Soft Skills
-              <span>{openSoftSkills ? "-" : "+"}</span>
+              <span>{openSoftSkills ? "▲" : "▼"}</span>
             </button>
           </CardTitle>
           {openSoftSkills && (
             <CardContent>
-              <ul className="list-disc list-inside space-y-2">
-                <li>Excellent communication</li>
+              <ul className="list-disc list-inside space-y-2 text-sm text-foreground/80">
+                <li>Excellent communicator</li>
+                <li>Willingness to learn</li>
                 <li>Critical thinking</li>
                 <li>Teamwork</li>
                 <li>Adaptability</li>
                 <li>Emotional intelligence</li>
-                <li>Willingness to learn</li>
-              </ul>
-            </CardContent>
-          )}
-        </Card>
-
-        {/* Tech Skills Dropdown Card */}
-        <Card className="flex-1">
-          <CardTitle>
-            <button
-              onClick={() => setOpenTechSkills(!openTechSkills)}
-              className="w-full text-left flex justify-between items-center text-lg font-semibold"
-            >
-              Tech Skills
-              <span>{openTechSkills ? "-" : "+"}</span>
-            </button>
-          </CardTitle>
-          {openTechSkills && (
-            <CardContent>
-              <ul className="list-disc list-inside space-y-2">
-                <li>React</li>
-                <li>TypeScript</li>
-                <li>JavaScript</li>
-                <li>Tailwind CSS</li>
-                <li>Storybook</li>
-                <li>Material UI</li>
-                <li>Redux</li>
-                <li>RESTful API</li>
-                <li>GIT</li>
               </ul>
             </CardContent>
           )}
         </Card>
       </div>
 
-      {/* Contact Section */}
+      {/* Courses & Certifications Card */}
       <Card>
-        <CardFooter>
-          <Button variant="primary" href="mailto:atamaniuksofiia@gmail.com">
-            Contact Me
-          </Button>
-        </CardFooter>
+        <CardTitle>Courses & Certifications</CardTitle>
+        <CardContent>
+          <ul className="list-disc list-inside space-y-2 text-sm text-foreground/80">
+            <li>React Crash Course: From Zero to Hero - 2024, Udemy</li>
+            <li>JavaScript Basics for Beginners - 2024, Udemy</li>
+            <li>
+              Agile Crash Course: Agile Project Management; Agile Delivery -
+              2022, Udemy
+            </li>
+            <li>
+              Agile Fundamentals: Including Scrum and Kanban - 2024, Udemy
+            </li>
+            <li>Formation of leadership skills - 2021, UCU</li>
+            <li>
+              Time Management. How to organize your team's time - 2021, LBS UCU
+            </li>
+            <li>Emotional intelligence - 2021, UCU</li>
+          </ul>
+        </CardContent>
+      </Card>
+
+      {/* Languages Card */}
+      <Card>
+        <CardTitle>Languages</CardTitle>
+        <CardContent>
+          <ul className="list-disc list-inside space-y-2 text-sm text-foreground/80">
+            <li>
+              <strong>English</strong> — Upper-intermediate (B2+)
+            </li>
+            <li>
+              <strong>Ukrainian</strong> — Native
+            </li>
+          </ul>
+        </CardContent>
       </Card>
     </section>
   );
